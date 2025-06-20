@@ -88,7 +88,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  if (!req.session.isLoggedIn){
+  if (!req.session.isLoggedIn){ // if logged 
     res.sendFile('public/index.html', options);
   }
   console.log(`${req.session.username} logged out`);
