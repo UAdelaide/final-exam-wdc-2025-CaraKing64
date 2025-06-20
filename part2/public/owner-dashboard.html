@@ -30,7 +30,7 @@
             <label class="form-label">Dog ID</label>
             <select v-model="form.dog_id" name="person" id="person-chooser" required>
               <option value="" selected disabled hidden>Select a user to edit</option>
-              <option v-for="user in users" v-bind:name="user.username">{{ user.username }}</option>
+              <option v-for="dog in dogs" v-bind:name="user.username">{{ user.username }}</option>
             </select>
           </div>
           <div class="mb-3">
