@@ -137,6 +137,7 @@ router.get('/api/dogs', async function(req, res, next){
   for (let i = 0; i < rows.length; i++){
     console.log(rows);
   }
+  res.send(rows);
 });
 
 module.exports = router;
