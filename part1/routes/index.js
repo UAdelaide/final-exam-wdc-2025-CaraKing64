@@ -218,16 +218,18 @@ router.get('/api/walkers/summary', async function(req, res, next){
   for (let i = 0; i < walkers.length; i++){
     var w = {
       walker_username: walkers[i].username,
-      rating_count: 0
+      rating_count: 0,
+      rating_sum: 0
     };
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
       // if the current rating is for the current walker
       if (ratings[j].username == w.walker_username){
         w.rating_count += 1;
+        w.rating_sum += ratings[j].rating;
       }
     }
-    // average the 
+    // average the
   }
 
 });
