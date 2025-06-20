@@ -136,7 +136,8 @@ router.get('/api/dogs', async function(req, res, next){
 });
 
 router.get('/api/walkrequests/open', function(req, res, next){
-  const [rows] = await db.execute
+  const [rows] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location, username FROM ((WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id) I
+NNER JOIN Users ON Dogs.owner_id = Users.user_id) where status = 'open';`)
 });
 
 module.exports = router;
