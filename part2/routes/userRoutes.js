@@ -39,7 +39,7 @@ options = { root: '.' };
 // POST login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  console.log(username, password);
+  //console.log(username, password);
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
   //console.log(rows);
   if (rows.length === 0){
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
     console.log(rows[0]);
     res.status(200);
     res.send('success');
-    //res.sendFile('public/owner-dashboard.html');
+    res.sendFile(`public/owner-dashboard.html`);
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
