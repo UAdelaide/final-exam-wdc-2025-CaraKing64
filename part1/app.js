@@ -35,15 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
       database: 'DogWalkService'
     });
 
-    // Create a table if it doesn't exist
-    await db.execute(`
-      CREATE TABLE IF NOT EXISTS books (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255),
-        author VARCHAR(255)
-      )
-    `);
-
+    // Create a tables if they don't exist
     await db.execute(`
       CREATE TABLE IF NOT EXISTS Users (
         user_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -54,6 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
+
 
     // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
