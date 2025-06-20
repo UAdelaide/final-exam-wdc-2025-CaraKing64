@@ -71,9 +71,9 @@ router.post('/login', async (req, res) => {
     req.session.isLoggedIn = true;
     req.session.username = username;
     console.log(`${username} logged in`);
-    if (rows[0].role === 'owner'){
+    if (rows[0].role === 'owner'){ // user is owner so it sends the owner-dashboard
       res.sendFile(`public/owner-dashboard.html`, options);
-    } else if (rows[0].role === 'walker'){
+    } else if (rows[0].role === 'walker'){ // user is walker so it sends the walker dashboard
       res.sendFile(`public/walker-dashboard.html`, options);
     } else {
       console.log("Has role that is neither owner nor walker");
