@@ -212,7 +212,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // console.log(walkers);
   // console.log(ratings);
   // console.log(completedwalks);
-  var res= [];
+  var res_rows = [];
   // loop through all the walkers
   for (let i = 0; i < walkers.length; i++){
     var w = {
@@ -243,8 +243,11 @@ router.get('/api/walkers/summary', async function(req, res, next){
       }
     }
 
-    delete
+    delete w.rating_sum;
+    res_rows.push(w);
   }
+  res.status(200);
+  res.send()
 
 });
 
