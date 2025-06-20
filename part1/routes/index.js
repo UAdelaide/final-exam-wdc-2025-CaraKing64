@@ -125,8 +125,14 @@ let db;
       `);
     }
     const [rows4] = await db.execute('SELECT COUNT(*) FROM WalkApplications');
-    if (rows4[0].count){
-      await db.execute(`INSERT INTO WalkApplications (request_id, walker_id, status) VALUES ((SELECT request_id FROM WalkRequests WHERE location = 'Explex Court'), (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'), ((SELECT request_id FROM WalkRequests WHERE location = 'Jujutsu High'),(SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted');
+    if (rows4[0].count === 0){
+      await db.execute(`
+        INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
+        (
+        (SELECT request_id FROM WalkRequests WHERE location = 'Explex Court'),
+        (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted'),
+        ((SELECT request_id FROM WalkRequests WHERE location = 'Jujutsu High'),
+        (SELECT user_id FROM Users WHERE username = 'bobwalker'), 'accepted');
       `);
     }
     const [rows5] = await db.execute('SELECT COUNT(*) FROM WalkRatings');
