@@ -43,6 +43,7 @@ router.post('/login', async (req, res) => {
   if (rows.length === 0){
     res.status(400).json({error: 'Username not found'});
   } else if (rows.length > 1){
+    // There are several users with the same username in the database
     console.log("Several users with same username in database");
     console.log(rows);
     res.status(500).json({error: 'Invalid user data'});
