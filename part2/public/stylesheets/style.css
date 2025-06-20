@@ -161,7 +161,7 @@ section {
   border-style: solid;
   border-color: red;
   position: absolute;
-  margin: 0 0 500px 0;
+  margin: 0 0 0 700px;
 }
 
 #navbar-ul {
