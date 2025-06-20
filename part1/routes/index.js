@@ -140,6 +140,7 @@ router.get('/api/dogs', async function(req, res, next){
     res.status(200);
     res.send(rows);
   });
+  db.
 });
 
 module.exports = router;
