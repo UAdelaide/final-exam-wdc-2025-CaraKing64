@@ -237,7 +237,9 @@ router.get('/api/walkers/summary', async function(req, res, next){
     }
 
     // count the number of completed walks
-    for (let j = 0; j < )
+    for (let j = 0; j < completedwalks.length; j++){
+      
+    }
   }
 
 });
