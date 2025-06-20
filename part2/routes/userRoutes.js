@@ -95,7 +95,6 @@ router.post('/logout', async (req, res) => {
       console.log(err);
     }
   });
-
   res.sendFile('public/index.html', options); // send login screen
 });
 
