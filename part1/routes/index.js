@@ -140,4 +140,8 @@ router.get('/api/dogs', async function(req, res, next){
   res.send(rows);
 });
 
+router.get('/api/walkrequests/open', function(req, res, next){
+  co
+});
+
 module.exports = router;
