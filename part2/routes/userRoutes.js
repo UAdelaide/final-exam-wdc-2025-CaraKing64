@@ -54,10 +54,8 @@ router.post('/login', async (req, res) => {
       res.status(400).json({error: 'Invalid user data'});
     }
   }
-
-  }
   username = req.body.username;
-  password
+  password = req.body.password;
   // Get the user with the provided username
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
   if (rows.length < 0){
