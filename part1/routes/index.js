@@ -183,7 +183,7 @@ router.get('/api/dogs', async function(req, res, next){
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next){
-  // for each walkrequest, get the request_id, name, requested_time, duration_minutes, location, 
+  // for each walkrequest, get the details about the walk request, including the username of the dog owner
   const [rows] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location, username FROM ((WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id) INNER JOIN Users ON Dogs.owner_id = Users.user_id) where status = 'open';`);
 
   // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
