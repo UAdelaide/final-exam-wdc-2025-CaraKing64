@@ -14,11 +14,14 @@
     <div v-if="!showing_dog">
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
+    <div id="buttons">
+
     <button type="submit" >🍉Show me a carrot! (This button doesn't work)</button>
     <button type="submit" >🥛Show me a piece of paper! (This button doesn't work)</button>
     <br>
     <button type="submit" onclick="vueinst.showing_dog = true;">🚗Show me a dog! (This button works)</button>
     <button type="submit" >🍭Show me a cat! (This button doesn't work)</button>
+    </div>
     <img v-if="showing_dog" src="https://images.dog.ceo/breeds/mountain-bernese/n02107683_1468.jpg" alt="Random dog!">
 
   </div>
