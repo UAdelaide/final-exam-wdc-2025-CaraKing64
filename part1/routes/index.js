@@ -191,6 +191,7 @@ router.get('/api/walkrequests/open', async function(req, res, next){
 router.get('/api/walkers/summary', async function(req, res, next){
   // run the SQL query
   const [rows] = await db.execute(`
+    SELECT * FROM Users WHERE role = 'walker';
     SELECT walker_id, rating FROM WalkRatings;
     `);
 
