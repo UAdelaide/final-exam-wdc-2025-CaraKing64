@@ -4,7 +4,15 @@
     <title>Dog of the day!</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="javascripts/indexpage.js" defer></script>
+    <script defer>
+
+const vueinst = new Vue({
+  el: "#app",
+  data: {
+    showing_dog: false
+  }
+});
+    </script>
 </head>
 
 <body>
