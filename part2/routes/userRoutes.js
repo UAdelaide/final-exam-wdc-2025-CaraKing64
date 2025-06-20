@@ -66,8 +66,8 @@ router.post('/login', async (req, res) => {
     console.log("Several users with same username in database");
     console.log(rows);
     res.status(500).json({error: 'Invalid user data'});
-  } else if (password === rows[0].password_hash){
-    // The password matched the username
+  } else if (password === rows[0].password_hash){ // username correct and password matched
+    // set session variables
     req.session.isLoggedIn = true;
     req.session.username = username;
     console.log(`${username} logged in`);
