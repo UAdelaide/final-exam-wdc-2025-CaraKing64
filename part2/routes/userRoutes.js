@@ -90,7 +90,10 @@ router.post('/logout', async (req, res) => {
   if (!req.session.isLoggedIn){
     res.sendFile('public/index.html', options);
   }
+  var username = req.session.username;
   console.log(`${username} logged out`);
+  req.session.username = null;
+  req.session.isLoggedIn = false;
 });
 
 module.exports = router;
