@@ -88,11 +88,11 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  if (!req.session.isLoggedIn){ // if logged 
+  if (!req.session.isLoggedIn){ // if logged out already, just send the login screen
     res.sendFile('public/index.html', options);
   }
   console.log(`${req.session.username} logged out`);
-  req.session.destroy(function(err) {
+  req.session.destroy(function(err) { // destroy the req session so that 
     if (err){
       console.log("Unable to access session");
       console.log(err);
