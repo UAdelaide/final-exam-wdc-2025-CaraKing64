@@ -1,3 +1,8 @@
-var vueinst = new Vue({
-  
-})
+
+const vueinst = new Vue({
+  el: "#app",
+  data: {
+    users: [],
+    columns: ["Username", "Password", "Address", "IsAdmin"]
+  }
+});
