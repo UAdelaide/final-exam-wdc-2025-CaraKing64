@@ -98,7 +98,6 @@ router.post('/logout', async (req, res) => {
       console.log(err);
     }
   });
-  console.log(`${req.session.username} logged out`);
 
   res.sendFile('public/index.html', options);
 });
