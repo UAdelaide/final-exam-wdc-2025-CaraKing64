@@ -7,9 +7,10 @@ const vueinst = new Vue({
   }
 });
 
+// this function toggles the dog showing and hiding
 async function toggleDog(){
-  vueinst.showing_dog = !vueinst.showing_dog;
-  if (vueinst.showing_dog){
+  vueinst.showing_dog = !vueinst.showing_dog; // toggle dog showing/hiding
+  if (vueinst.showing_dog){ // if showing, get the image for the dog
     fetch('https://dog.ceo/api/breeds/image/random')
     .then((response) => response.json())
     .then((data) => {
