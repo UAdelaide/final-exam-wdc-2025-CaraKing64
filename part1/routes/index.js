@@ -219,7 +219,8 @@ router.get('/api/walkers/summary', async function(req, res, next){
     var w = {
       walker_username: walkers[i].username,
       total_ratings: 0,
-      rating_sum: 0
+      rating_sum: 0,
+      completed_walks: 0
     };
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
@@ -238,7 +239,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
 
     // count the number of completed walks
     for (let j = 0; j < completedwalks.length; j++){
-      
+      if (completedwalks[j].username)
     }
   }
 
