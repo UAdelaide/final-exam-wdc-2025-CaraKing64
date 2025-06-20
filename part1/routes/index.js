@@ -190,7 +190,9 @@ router.get('/api/walkrequests/open', async function(req, res, next){
 
 router.get('/api/walkers/summary', async function(req, res, next){
   // run the SQL query
-  const [rows] = await db.execute(``);
+  const [rows] = await db.execute(`
+    SELECT * FROM Users WHERE role = 'walker';
+    `);
 
   // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
   var res_rows = [];
