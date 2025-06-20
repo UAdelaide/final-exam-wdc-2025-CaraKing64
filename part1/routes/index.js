@@ -142,6 +142,7 @@ router.get('/api/dogs', async function(req, res, next){
   }
   res.status(200);
   res.send(res_rows);
+  db.execute()
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next){
