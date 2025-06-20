@@ -63,7 +63,8 @@ router.get('/dogs', async (req, res) => {
   var username = req.session.username;
   console.log(`Getting dogs for ${username}`);
   const [row] = await db.query('SELECT dog_id, owner_id, name, size FROM (Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id) WHERE Users.username = ?', [username]);
-  console.log(row);
+  //console.log(row);
+  
   res.send(row);
 });
 
