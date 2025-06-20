@@ -64,8 +64,11 @@ router.get('/dogs', async (req, res) => {
   console.log(`Getting dogs for ${username}`);
   const [row] = await db.query('SELECT dog_id, owner_id, name, size FROM (Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id) WHERE Users.username = ?', [username]);
   //console.log(row);
-  if (row.length )
-  res.send(row);
+  if (row.length === 0){
+    res.status(400).json({error: 'No dogs found for this user'});
+  } else {
+    res.send(row);
+  }
 });
 
 module.exports = router;
