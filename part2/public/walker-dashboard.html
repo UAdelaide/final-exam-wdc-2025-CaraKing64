@@ -55,9 +55,9 @@
 
 
         async function getUserId(){
-          ublic/walker-dashboard.html
+          return await fetch('/api/users/me').json();
         }
-        const user =
+        const user = getUserId();
 
         async function loadWalkRequests() {
           try {
