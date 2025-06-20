@@ -120,6 +120,7 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Gojo', 'large');
       `);
     }
+    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM ')
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
