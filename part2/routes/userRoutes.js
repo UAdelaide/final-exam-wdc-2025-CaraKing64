@@ -88,9 +88,6 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  if (!req.session.isLoggedIn){ // if logged out already, just send the login screen
-    res.sendFile('public/index.html', options);
-  }
   console.log(`${req.session.username} logged out`);
   req.session.destroy(function(err) { // destroy the req session so that anything that tries to reference the session will fail
     if (err){ // if the session is already destroyed
