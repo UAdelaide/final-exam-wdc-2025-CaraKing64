@@ -134,7 +134,7 @@ router.get('/api/dogs', async function(req, res, next){
   const [rows] = await db.execute('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)');
   var res_rows = [];
   for (let i = 0; i < rows.length; i++){
-    res_rows.push({
+    res_rows.push({ // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
       dog_name: rows[i].name,
       size: rows[i].size,
       owner_username: rows[i].username
