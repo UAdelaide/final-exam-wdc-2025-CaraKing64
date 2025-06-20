@@ -53,7 +53,12 @@ app.use(express.static(path.join(__dirname, 'public')));
         name VARCHAR(50) NOT NULL,
         size ENUM('small', 'medium', 'large') NOT NULL,
         FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-    );`)
+      )
+    `);
+    await db.execute(`
+
+
+    `);
 
     // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
