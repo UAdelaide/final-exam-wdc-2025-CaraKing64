@@ -99,7 +99,7 @@ router.post('/logout', async (req, res) => {
     }
   });
 
-  res.sendFile('public/index.html', options);
+  res.sendFile('public/index.html', options); // send login screen
 });
 
 module.exports = router;
