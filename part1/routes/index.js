@@ -195,6 +195,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     `);
 
   // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
+  data = [];
   var res_rows = [];
   for (let i = 0; i < rows.length; i++){
     console.log(rows[i]);
