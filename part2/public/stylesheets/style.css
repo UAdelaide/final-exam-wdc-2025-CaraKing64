@@ -171,3 +171,6 @@ section {
   display: flex;
 }
 
+#dog-chooser {
+  background-color: #222222;
+}
