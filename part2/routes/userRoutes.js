@@ -55,36 +55,35 @@ router.post('/login', async (req, res) => {
       res.status(400).json({error: 'Invalid user data'});
     }
   } else {
-
-  }
-  username = req.body.username;
-  password = req.body.password;
-  // Get the user with the provided username
-  const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
-  if (rows.length < 0){
-    // The username wasn't found in the database
-    res.status(400).json({error: 'Username not found'});
-  } else if (rows.length > 1){
-    // There are several users with the same username in the database
-    console.log("Several users with same username in database");
-    console.log(rows);
-    res.status(500).json({error: 'Invalid user data'});
-  } else if (password === rows[0].password_hash){ // username correct and password matched
-    // set session variables
-    req.session.isLoggedIn = true;
-    req.session.username = username;
-    console.log(`${username} logged in`);
-    if (rows[0].role === 'owner'){ // user is owner so it sends the owner dashboard
-      res.sendFile(`public/owner-dashboard.html`, options);
-    } else if (rows[0].role === 'walker'){ // user is walker so it sends the walker dashboard
-      res.sendFile(`public/walker-dashboard.html`, options);
-    } else { // user is somehow not owner or walker
-      console.log("Has role that is neither owner nor walker");
-      console.log(rows[0]);
-      res.status(400).json({error: 'Invalid user data'});
+    username = req.body.username;
+    password = req.body.password;
+    // Get the user with the provided username
+    const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
+    if (rows.length < 0){
+      // The username wasn't found in the database
+      res.status(400).json({error: 'Username not found'});
+    } else if (rows.length > 1){
+      // There are several users with the same username in the database
+      console.log("Several users with same username in database");
+      console.log(rows);
+      res.status(500).json({error: 'Invalid user data'});
+    } else if (password === rows[0].password_hash){ // username correct and password matched
+      // set session variables
+      req.session.isLoggedIn = true;
+      req.session.username = username;
+      console.log(`${username} logged in`);
+      if (rows[0].role === 'owner'){ // user is owner so it sends the owner dashboard
+        res.sendFile(`public/owner-dashboard.html`, options);
+      } else if (rows[0].role === 'walker'){ // user is walker so it sends the walker dashboard
+        res.sendFile(`public/walker-dashboard.html`, options);
+      } else { // user is somehow not owner or walker
+        console.log("Has role that is neither owner nor walker");
+        console.log(rows[0]);
+        res.status(400).json({error: 'Invalid user data'});
+      }
+    } else { // username correct but password didn't match
+      res.status(403).json({error: 'Password incorrect'});
     }
-  } else { // username correct but password didn't match
-    res.status(403).json({error: 'Password incorrect'});
   }
 });
 
