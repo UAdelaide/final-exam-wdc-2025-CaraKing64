@@ -133,9 +133,9 @@ let db;
 router.get('/api/dogs', async function(req, res, next){
   // run the SQL query
   const [rows] = await db.execute('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)');
-  var res_rows = [];
-  
+
   // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
+  var res_rows = [];
   for (let i = 0; i < rows.length; i++){
     res_rows.push({
       dog_name: rows[i].name,
@@ -143,6 +143,7 @@ router.get('/api/dogs', async function(req, res, next){
       owner_username: rows[i].username
     });
   }
+  // send results
   res.status(200);
   res.send(res_rows);
 });
@@ -163,6 +164,8 @@ router.get('/api/walkrequests/open', async function(req, res, next){
       owner_username: rows[i].username
     });
   }
+  // send results
+  res.status(200);
   res.send(res_rows);
 });
 
