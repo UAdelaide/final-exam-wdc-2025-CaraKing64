@@ -55,7 +55,9 @@ router.post('/login', async (req, res) => {
     console.log(rows[0]);
     res.status(200);
     res.send('success');
-    res.sendFile(`public/owner-dashboard.html`);
+    if (rows[0].role === 'owner'){
+      res.sendFile(`public/owner-dashboard.html`);
+    }
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
