@@ -55,8 +55,10 @@
 
 
         async function getUserId(){
+          // send a get request to get the user data
           const res = await fetch('/api/users/me').then((response) => response.json());
           console.log(res);
+          // return the current user's user_id
           return res.user_id
         }
 
