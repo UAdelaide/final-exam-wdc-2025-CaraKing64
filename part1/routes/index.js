@@ -207,15 +207,9 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // run the SQL query
   const [walkers] = await db.execute(`SELECT * FROM Users WHERE role = 'walker'`);
   const [ratings] = await db.execute(`SELECT username, rating FROM (Users INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id)`);
-  const [completedwalks] = await db.execute(``);
+  const [completedwalks] = await db.execute(`SELECT username FROM WalkApplications INNER JOIN Users ON WalkApplications.walker_id = Users.user_id WHERE status = 'accepted'`);
 
-  // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
-  data = [];
-  var res_rows = [];
-  for (let i = 0; i < rows.length; i++){
-    console.log(rows[i]);
-  }
-  res.status(200);
+  console.log(walkers);
 
 });
 
