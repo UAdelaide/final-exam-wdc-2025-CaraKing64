@@ -39,8 +39,10 @@ var options = { root: '.' };
 // POST login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
+  // Get the user with the provided username
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
   if (rows.length === 0){
+    // The username wasn't found in the database
     res.status(400).json({error: 'Username not found'});
   } else if (rows.length > 1){
     // There are several users with the same username in the database
