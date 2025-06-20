@@ -40,26 +40,25 @@ var options = { root: '.' };
 router.post('/login', async (req, res) => {
   var username;
   var password;
-  if (!req.session.isLoggedIn){
+  if (req.session.isLoggedIn){
     // User is already logged in
     username = req.session.username;
     const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
-    if (rows.length < 0){
-      // The username wasn't found in the database
-      res.status(400).json({error: 'Username not found'});
-    } else if (rows.length > 1){
-      // There are several users with the same username in the database
-      console.log("Several users with same username in database");
-      console.log(rows);
-      res.status(500).json({error: 'Invalid user data'});
-    }
+
   }
   username = req.body.username;
-  password = req.body.password;
+  password
   // Get the user with the provided username
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
-
-  if (password === rows[0].password_hash){
+  if (rows.length < 0){
+    // The username wasn't found in the database
+    res.status(400).json({error: 'Username not found'});
+  } else if (rows.length > 1){
+    // There are several users with the same username in the database
+    console.log("Several users with same username in database");
+    console.log(rows);
+    res.status(500).json({error: 'Invalid user data'});
+  } else if (password === rows[0].password_hash){
     // The password matched the username
     req.session.isLoggedIn = true;
     req.session.username = username;
