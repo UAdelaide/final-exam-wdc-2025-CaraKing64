@@ -52,6 +52,8 @@ router.post('/login', async (req, res) => {
     req.session.isLoggedIn = true;
     req.session.username = username;
     console.log(`${username} logged in`);
+    res.status(200);
+    res.sendFile('public/')
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
