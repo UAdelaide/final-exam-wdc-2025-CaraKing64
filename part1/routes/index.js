@@ -131,6 +131,7 @@ let db;
 })();
 
 router.get('/api/dogs', async function(req, res, next){
+  var res_r
   const [rows] = await db.execute('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)');
   res.send(rows);
 });
