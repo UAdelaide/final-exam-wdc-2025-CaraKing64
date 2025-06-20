@@ -33,7 +33,7 @@ router.get('/me', async (req, res) => {
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-
+  const [row] = await db.query(`SELECT user_id, `)
   res.json(req.session);
 });
 
