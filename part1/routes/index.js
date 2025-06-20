@@ -214,7 +214,9 @@ router.get('/api/walkers/summary', async function(req, res, next){
   console.log(completedwalks);
   var data = [];
   for (let i = 0; i < walkers.length; i++){
-    var w = {wa}
+    var w = {
+      walker_username = walkers[i].username;
+    }
   }
 
 });
