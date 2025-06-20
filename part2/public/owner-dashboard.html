@@ -27,7 +27,7 @@
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3" v-if="dogs.length > 0">
-            <label class="form-label">Select Your Dog </label><br>
+            <label class="form-select">Select Your Dog </label><br>
             <select v-model="form.dog_id" name="person" id="dog-chooser" required>
               <option value="" selected disabled hidden>-- Choose a dog --</option>
               <option v-for="dog in dogs" v-bind:name="dog.name">{{ dog.name }}</option>

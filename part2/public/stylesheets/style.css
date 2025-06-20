@@ -170,11 +170,3 @@ section {
   list-style: none;
   display: flex;
 }
-
-#dog-chooser {
-  background-color: #aaaaaa;
-}
-
-#dog-chooser option:hover {
-  background-color: skyblue;
-}
