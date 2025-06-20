@@ -34,7 +34,7 @@ router.get('/me', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   const [row] = await db.query(`SELECT * FROM Users WHERE Username = ?`, [req.session.username]);
-  res.send(row);
+  res.send(row[0]);
 });
 
 var options = { root: '.' };
