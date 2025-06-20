@@ -64,24 +64,6 @@ router.post('/login', async (req, res) => {
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
-
-
-  /*
-  try {
-    const [rows] = await db.query(`
-      SELECT user_id, username, role FROM Users
-      WHERE username = ? AND password_hash = ?
-    `, [username, password]);
-
-    if (rows.length === 0) {
-      return res.status(401).json({ error: 'Invalid credentials' });
-    }
-
-    res.json({ message: 'Login successful', user: rows[0] });
-  } catch (error) {
-    res.status(500).json({ error: 'Login failed' });
-  }
-  */
 });
 
 module.exports = router;
