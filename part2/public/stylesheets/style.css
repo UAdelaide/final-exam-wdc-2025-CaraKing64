@@ -158,6 +158,7 @@ section {
 #logout {
   background-color: rgb(250, 250, 251);
   color: red;
-  margin: 1em 1em 1em 1em;
-  margin-: red;
+  border-style: solid;
+  border-color: red;
+
 }
