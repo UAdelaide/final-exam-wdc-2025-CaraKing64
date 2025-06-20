@@ -13,9 +13,10 @@
     <p>Below is a picture showing the dog of the day</p>
     <p>Scroll down to find the dog of the day</p>
     <button type="submit" onclick="vueinst.showing_dog = true;"></button>
-    <div v-if="showing_dog">
+    <div v-if="!showing_dog">
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
+    <img v-if="showing_dog" src="https://dog.ceo/api/breeds/image/random" alt="">
 
   </div>
 </body>
