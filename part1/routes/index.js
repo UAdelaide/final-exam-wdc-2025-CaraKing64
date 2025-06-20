@@ -140,13 +140,21 @@ router.get('/api/dogs', async function(req, res, next){
       owner_username: rows[i].username
     });
   }
+  res.status(200);
   res.send(res_rows);
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next){
   const [rows] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location, username FROM ((WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id) INNER JOIN Users ON Dogs.owner_id = Users.user_id) where status = 'open';`);
-  console.log(rows);
-  res.send(rows);
+  var res_rows = [];
+  for (let i = 0; i < rows.length; i++){
+    res_rows.push({
+      dog_name: rows[i].name,
+      size: rows[i].size,
+      owner_username: rows[i].username
+    });
+  }
+  res.send(res_rows);
 });
 
 module.exports = router;
