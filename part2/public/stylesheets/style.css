@@ -160,11 +160,11 @@ section {
   color: red;
   border-style: solid;
   border-color: red;
-  position: absolute;
+  justify-content: right;
 }
 
 #navbar-ul {
-  justify-content: center;
+  justify-content: left;
   list-style: none;
   display: flex;
 }
