@@ -135,9 +135,10 @@ router.get('/api/dogs', async function(req, res, next){
   res.send(rows);
 });
 
-router.get('/api/walkrequests/open', function(req, res, next){
-  const [rows] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location, username FROM ((WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id) I
-NNER JOIN Users ON Dogs.owner_id = Users.user_id) where status = 'open';`)
+router.get('/api/walkrequests/open', async function(req, res, next){
+  const [rows] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location, username FROM ((WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id) INNER JOIN Users ON Dogs.owner_id = Users.user_id) where status = 'open';`);
+  console.log(rows);
+  res.send(rows);
 });
 
 module.exports = router;
