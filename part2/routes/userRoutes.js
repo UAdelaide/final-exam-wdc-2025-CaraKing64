@@ -52,13 +52,14 @@ router.post('/login', async (req, res) => {
       console.log("Several users with same username in database");
       console.log(rows);
       res.status(500).json({error: 'Invalid user data'});
-
+    }
   }
   username = req.body.username;
   password = req.body.password;
   // Get the user with the provided username
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
-  } else if (password === rows[0].password_hash){
+
+  if (password === rows[0].password_hash){
     // The password matched the username
     req.session.isLoggedIn = true;
     req.session.username = username;
