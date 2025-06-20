@@ -59,6 +59,8 @@ router.post('/:id/apply', async (req, res) => {
   }
 });
 
-router.get('/dogs')
+router.get('/dogs', async (req, res) => {
+  console.log('Getting dogs for')
+});
 
 module.exports = router;
