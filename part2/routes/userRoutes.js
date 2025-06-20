@@ -38,8 +38,10 @@ router.get('/me', (req, res) => {
 var options = { root: '.' };
 // POST login
 router.post('/login', async (req, res) => {
-  if (req.isLoggedIn){
-    //
+  if (req.session.isLoggedIn){
+    // User is already logged in
+    res.status(403);
+    
   }
   const { username, password } = req.body;
   // Get the user with the provided username
