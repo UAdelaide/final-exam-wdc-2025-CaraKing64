@@ -53,7 +53,7 @@
         const message = ref('');
         const error = ref('');
 
-        const user = await fetch('/api');
+        const user = await fetch('/api/users/me').json();
 
         async function loadWalkRequests() {
           try {
