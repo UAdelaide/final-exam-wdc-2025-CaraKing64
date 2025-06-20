@@ -232,9 +232,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     }
     // if there were ratings, average them
     if (w.total_ratings !== 0){
-      console.log("AVERAGING");
-      w.average_rating = w.rating_sum / w.rating_count;
-      console.log(`${w.rating_sum} / ${w.rating_count} = ${w.average_rating}`);
+      w.average_rating = w.rating_sum / w.total_ratings;
     }
 
     // count the number of completed walks
