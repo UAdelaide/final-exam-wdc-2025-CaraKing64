@@ -159,4 +159,5 @@ section {
   background-color: rgb(250, 250, 251);
   outline-color: red;
   color: red;
+  outline: 1em;
 }
