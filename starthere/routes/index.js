@@ -129,6 +129,8 @@ let db;
   }
 })();
 
-router.get('/api/dogs', function(req, res, next){})
+router.get('/api/dogs', function(req, res, next){
+  console.log("requested dogs");
+});
 
 module.exports = router;
