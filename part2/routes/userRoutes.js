@@ -41,11 +41,12 @@ router.post('/login', async (req, res) => {
   console.log(username, password);
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
   console.log(rows);
-  var match = null;
   if (rows.length == 0){
-    res.status(400).json({error: ''});
+    res.status(400).json({error: 'Username not found'});
   }
-  if (rows.length > 1)
+  if (rows.length > 1){
+    res.status(500).json({error: 'Internal server error'})
+  }
   if (password === rows[0].)
 
 
