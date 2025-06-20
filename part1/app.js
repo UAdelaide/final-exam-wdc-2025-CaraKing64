@@ -119,7 +119,7 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Rex', 'medium'),
         ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Gojo', 'large');
 
-        `);
+      `);
     }
 
   } catch (err) {
