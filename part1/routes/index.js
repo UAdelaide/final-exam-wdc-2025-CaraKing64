@@ -215,8 +215,8 @@ router.get('/api/walkers/summary', async function(req, res, next){
   var data = [];
   for (let i = 0; i < walkers.length; i++){
     var w = {
-      walker_username = walkers[i].username;
-    }
+      walker_username: walkers[i].username
+    };
   }
 
 });
