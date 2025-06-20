@@ -134,6 +134,7 @@ router.get('/api/dogs', async function(req, res, next){
   const [rows] = await db.execute('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)');
   var res_rows = [];
   for (let i = 0; i < rows.length; i++){
+    console.log(rows[i]);
     res_rows.push({
       dog_name: rows[i][0],
       size: rows[i][1],
