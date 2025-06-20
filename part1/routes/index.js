@@ -133,7 +133,9 @@ let db;
 router.get('/api/dogs', async function(req, res, next){
   console.log("requested dogs");
 
-  db.all('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)', )
+  db.all('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)', async (err, rows){
+
+  })
 
   res.send('dog');
 });
