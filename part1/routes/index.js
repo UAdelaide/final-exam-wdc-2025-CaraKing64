@@ -247,7 +247,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     res_rows.push(w);
   }
   res.status(200);
-  res.send()
+  res.send(res_rows);
 
 });
 
