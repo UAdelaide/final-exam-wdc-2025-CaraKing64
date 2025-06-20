@@ -40,6 +40,7 @@ router.post('/login', async (req, res) => {
   console.log(req.body);
   const { username, password } = req.body;
   console.log(username, password);
+  /*
   try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
@@ -54,6 +55,7 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
+  */
 });
 
 module.exports = router;
