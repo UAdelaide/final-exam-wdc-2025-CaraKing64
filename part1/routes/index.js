@@ -170,10 +170,15 @@ router.get('/api/walkrequests/open', async function(req, res, next){
 });
 
 router.get('/api/walkers/summary', async function(req, res, next){
+  // run the SQL query
   const [rows] = await db.execute(``);
 
+  var res_rows = [];
+  for (let i = 0; i < rows.length; i++){
+
+  }
   res.status(200);
-  
+
 });
 
 module.exports = router;
