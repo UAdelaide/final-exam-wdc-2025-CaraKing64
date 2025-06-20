@@ -54,7 +54,8 @@
         const error = ref('');
 
 
-        async function getUserId(){
+
+        async function getCurrentUser() {
           // send a get request to get the current user's data
           const res = await fetch('/api/users/me').then((response) => response.json());
           // return the current user's user_id
@@ -73,7 +74,7 @@
 
         async function applyToWalk(requestId) {
           try {
-            var user = await getUserId(); // set the user_id to be the current user's user_id
+            var user = await getCurrentUser(); // set the user_id to be the current user's user_id
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
