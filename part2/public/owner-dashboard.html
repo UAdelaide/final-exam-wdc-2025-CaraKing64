@@ -26,13 +26,14 @@
       </div>
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
-          <div class="mb-3">
+          <div class="mb-3" v-if="dogs.length > 0">
             <label class="form-label">Dog ID</label>
             <select v-model="form.dog_id" name="person" id="person-chooser" required>
               <option value="" selected disabled hidden>Select a user to edit</option>
               <option v-for="dog in dogs" v-bind:name="dog.name">{{ dog.name }}</option>
             </select>
           </div>
+          <p v-else>No walk requests yet.</p>
           <div class="mb-3">
             <label class="form-label">Requested Date & Time</label>
             <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
