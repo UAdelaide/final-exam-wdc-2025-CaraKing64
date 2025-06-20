@@ -149,9 +149,8 @@ router.get('/api/walkrequests/open', async function(req, res, next){
   var res_rows = [];
   for (let i = 0; i < rows.length; i++){
     res_rows.push({
-      dog_name: rows[i].name,
-      size: rows[i].size,
-      owner_username: rows[i].username
+      request_id: rows[i].request_id,
+      
     });
   }
   res.send(res_rows);
