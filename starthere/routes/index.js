@@ -131,6 +131,7 @@ let db;
 
 router.get('/api/dogs', function(req, res, next){
   console.log("requested dogs");
+  res.send('dog');
 });
 
 module.exports = router;
