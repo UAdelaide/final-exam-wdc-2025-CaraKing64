@@ -52,8 +52,8 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        
-        const user = 3;
+
+        const user = await fetch('/api');
 
         async function loadWalkRequests() {
           try {
