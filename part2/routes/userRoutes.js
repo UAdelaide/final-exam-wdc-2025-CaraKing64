@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
     console.log(rows);
     res.status(500).json({error: 'Internal server error'});
   } else if (password === rows[0].length){
-    
+    req.session.
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
