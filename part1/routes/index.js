@@ -152,6 +152,8 @@ router.get('/api/walkrequests/open', async function(req, res, next){
       request_id: rows[i].request_id,
       dog_name: rows[i].name,
       requested_time: rows[i].requested_time,
+      duration_minutes: rows[i].duration_minutes,
+      
     });
   }
   res.send(res_rows);
