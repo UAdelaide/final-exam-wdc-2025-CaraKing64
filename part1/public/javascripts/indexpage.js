@@ -14,6 +14,7 @@ async function toggleDog(){
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      vueinst.
     });
   }
 }
