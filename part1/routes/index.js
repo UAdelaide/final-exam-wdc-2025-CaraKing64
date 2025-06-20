@@ -221,7 +221,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     };
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
-      // if the current rating is for the current walker
+      // if the current rating is for the current walker, increment it and add the rating to the sum to average at the end
       if (ratings[j].username === w.walker_username){
         w.total_ratings += 1;
         w.rating_sum += ratings[j].rating;
@@ -231,14 +231,12 @@ router.get('/api/walkers/summary', async function(req, res, next){
     if (w.total_ratings !== 0){
       w.average_rating = w.rating_sum / w.total_ratings;
     }
-
     // count the number of completed walks
     for (let j = 0; j < completedwalks.length; j++){
       if (completedwalks[j].username === w.walker_username){
         w.completed_walks += 1;
       }
     }
-
     // remove unwanted variables
     delete w.rating_sum;
     res_rows.push(w);
