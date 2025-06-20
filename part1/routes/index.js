@@ -229,7 +229,9 @@ router.get('/api/walkers/summary', async function(req, res, next){
         w.rating_sum += ratings[j].rating;
       }
     }
-    if (w.cou)
+    if (w.rating_count != 0){
+      w.average_rating = w.rating_sum / w.rating_count;
+    }
     // average the
   }
 
