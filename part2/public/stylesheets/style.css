@@ -163,4 +163,8 @@ section {
   position: absolute;
 }
 
-#nav
+#navbar-ul {
+  justify-content: center;
+  list-style: none;
+  display: flex;
+}
