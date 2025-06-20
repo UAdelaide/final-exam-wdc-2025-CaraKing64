@@ -224,9 +224,10 @@ router.get('/api/walkers/summary', async function(req, res, next){
     for (let j = 0; j < ratings.length; j++){
       // if the current rating is for the current walker
       if (ratings[j].username == w.walker_username){
-
+        w.rating_count += 1;
       }
     }
+    // average the 
   }
 
 });
