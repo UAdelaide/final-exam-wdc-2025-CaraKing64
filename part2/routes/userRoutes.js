@@ -43,8 +43,7 @@ router.post('/login', async (req, res) => {
   console.log(rows);
   var match = null;
   if (rows.length == 0){
-    res.status(400);
-    res.send('')
+    res.status(400).json({error: ''});
   }
   if (rows.length > 1)
   if (password === rows[0].)
