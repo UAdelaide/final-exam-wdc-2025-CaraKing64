@@ -109,6 +109,7 @@ let db;
         ('ellywalks', 'elly@example.com', 'hashed444', 'walker')
       `);
     }
+    const [rows2] = await db.execute('SELECT COUNT(*) AS count FROM Dogs')
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
