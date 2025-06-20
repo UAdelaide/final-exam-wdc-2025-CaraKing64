@@ -150,7 +150,8 @@ router.get('/api/walkrequests/open', async function(req, res, next){
   for (let i = 0; i < rows.length; i++){
     res_rows.push({
       request_id: rows[i].request_id,
-      
+      dog_name: rows[i].name,
+      requested_time: rows[i].requested_time,
     });
   }
   res.send(res_rows);
