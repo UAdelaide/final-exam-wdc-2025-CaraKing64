@@ -38,6 +38,9 @@ router.get('/me', (req, res) => {
 var options = { root: '.' };
 // POST login
 router.post('/login', async (req, res) => {
+  if (req.isLoggedIn){
+    //
+  }
   const { username, password } = req.body;
   // Get the user with the provided username
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
