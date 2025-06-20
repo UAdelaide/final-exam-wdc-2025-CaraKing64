@@ -212,6 +212,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
   console.log(walkers);
   console.log(ratings);
   console.log(completedwalks);
+  
 
 });
 
