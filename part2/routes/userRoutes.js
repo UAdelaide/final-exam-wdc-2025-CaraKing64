@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
   } else if (password === rows[0].length){
     req.session.isLoggedIn = true;
     req.session.username = username;
+    console.log(`${username} logged in`);
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
