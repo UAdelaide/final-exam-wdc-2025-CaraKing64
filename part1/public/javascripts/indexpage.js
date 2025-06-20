@@ -1,9 +1,9 @@
-
+// set up vue to be used
 const vueinst = new Vue({
   el: "#app",
   data: {
-    showing_dog: false,
-    image_url: null
+    showing_dog: false, // is the dog showing
+    image_url: null // the url
   }
 });
 
