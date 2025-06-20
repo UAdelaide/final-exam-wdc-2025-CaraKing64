@@ -7,8 +7,8 @@ const vueinst = new Vue({
   }
 });
 
-function getDogImage(){
-  fetch('https://dog.ceo/api/breeds/image/random/3', {
+async function getDogImage(){
+  var response = await fetch('https://dog.ceo/api/breeds/image/random/3', {
     method
   })
 }
