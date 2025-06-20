@@ -55,7 +55,7 @@
 
 
         async function getUserId(){
-          return await fetch('/api/users/me').json().;
+          return await fetch('/api/users/me').json().user_id;
         }
 
         const user = getUserId();
