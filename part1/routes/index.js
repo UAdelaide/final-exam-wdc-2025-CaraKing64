@@ -124,6 +124,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Gojo'), '2025-06-12 15:00:00', 40, 'Jujutsu High', 'completed')
       `);
     }
+    const [rows4] = await db.execute('SELECT COUNT(*) FROM WalkRatings')
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
