@@ -140,7 +140,7 @@ router.get('/api/dogs', async function(req, res, next){
       owner_username: rows[2]
     });
   }
-  res.send(rows);
+  res.send(res_rows);
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next){
