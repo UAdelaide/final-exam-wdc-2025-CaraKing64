@@ -243,7 +243,6 @@ router.get('/api/walkers/summary', async function(req, res, next){
   }
   res.status(200);
   res.send(res_rows);
-
 });
 
 module.exports = router;
