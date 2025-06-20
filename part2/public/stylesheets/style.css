@@ -164,6 +164,9 @@ section {
 }
 
 #navbar-ul {
+  margin: 0;
+  border: 0;
+  
   justify-content: left;
   list-style: none;
   display: flex;
