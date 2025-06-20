@@ -165,7 +165,7 @@ let db;
 })();
 
 router.get('/api/dogs', async function(req, res, next){
-  // run the SQL query
+  // get the name, size,  and the username of the owner
   const [rows] = await db.execute('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)');
 
   // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
