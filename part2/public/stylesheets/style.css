@@ -158,7 +158,7 @@ section {
 #logout {
   background-color: rgb(250, 250, 251);
   color: red;
-  outline-style: solid;
+  margin-style: solid;
   outline-color: red;
   outline-width: 1rem;
 }
