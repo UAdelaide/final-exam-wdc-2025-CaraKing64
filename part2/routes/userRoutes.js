@@ -54,6 +54,8 @@ router.post('/login', async (req, res) => {
       console.log(rows[0]);
       res.status(400).json({error: 'Invalid user data'});
     }
+  } else {
+
   }
   username = req.body.username;
   password = req.body.password;
