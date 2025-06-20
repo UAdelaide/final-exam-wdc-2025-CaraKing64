@@ -43,6 +43,7 @@ router.post('/login', async (req, res) => {
   if (req.session.isLoggedIn){
     // User is already logged in
     username = req.session.username;
+    // Get the user with the provided username
     const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
     if (rows[0].role === 'owner'){ // user is owner so it sends the owner dashboard
       res.sendFile(`public/owner-dashboard.html`, options);
