@@ -3,7 +3,7 @@ const vueinst = new Vue({
   el: "#app",
   data: {
     showing_dog: false, // is the dog showing, changes website layout
-    image_url: null // sets the 
+    image_url: null // sets the image url
   }
 });
 
