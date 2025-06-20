@@ -145,9 +145,12 @@ router.get('/api/dogs', async function(req, res, next){
 });
 
 router.get('/api/walkrequests/open', async function(req, res, next){
+  // run the SQL query
   const [rows] = await db.execute(`SELECT request_id, name, requested_time, duration_minutes, location, username FROM ((WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id) INNER JOIN Users ON Dogs.owner_id = Users.user_id) where status = 'open';`);
+
+  // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
   var res_rows = [];
-  for (let i = 0; i < rows.length; i++){ // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
+  for (let i = 0; i < rows.length; i++){
     res_rows.push({
       request_id: rows[i].request_id,
       dog_name: rows[i].name,
