@@ -25,6 +25,7 @@ router.post('/', async (req, res) => {
   const { dog_name, requested_time, duration_minutes, location } = req.body;
 
   try {
+    const [result2] = await db.query(`SELECT * FROM Dogs WHERE `)
     const [result] = await db.query(`
       INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location)
       VALUES (?, ?, ?, ?)
