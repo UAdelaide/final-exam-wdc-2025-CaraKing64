@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
     console.log("Several users with same username in database");
     console.log(rows);
     res.status(500).json({error: 'Internal server error'});
-  } else if (password === rows[0].length){
+  } else if (password === rows[0].password_hash){
     req.session.isLoggedIn = true;
     req.session.username = username;
     console.log(`${username} logged in`);
