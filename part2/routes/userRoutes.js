@@ -38,7 +38,7 @@ router.get('/me', async (req, res) => {
     res.status(500).json({error: 'No user exists in the database with your username'});
   } else if (row.length > 1){ // if there is more than 1 user with this username
     res.status(500).json({error: 'More than 1 user exists in the database with your username'});
-  } else {
+  } else { // else, if there's only one, send the data about it
     res.send(row[0]);
   }
 });
