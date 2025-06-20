@@ -154,7 +154,7 @@ router.get('/api/walkrequests/open', async function(req, res, next){
       requested_time: rows[i].requested_time,
       duration_minutes: rows[i].duration_minutes,
       location: rows[i].location,
-
+      owner_username: rows[i].username
     });
   }
   res.send(res_rows);
