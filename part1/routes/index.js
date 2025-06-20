@@ -136,8 +136,8 @@ router.get('/api/dogs', async function(req, res, next){
   for (let i = 0; i < rows.length; i++){
     console.log(rows[i]);
     res_rows.push({
-      dog_name: rows[i][0],
-      size: rows[i][1],
+      dog_name: rows[i].name,
+      size: rows[i].size,
       owner_username: rows[i][2]
     });
     console.log(res_rows);
