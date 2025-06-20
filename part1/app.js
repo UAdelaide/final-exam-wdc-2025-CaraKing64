@@ -116,7 +116,8 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
         ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
         ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Ginger', 'small'),
-        ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Rex', 'medium'), ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Gojo', 'large');
+        ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Rex', 'medium'),
+        ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Gojo', 'large');
 
         `);
     }
