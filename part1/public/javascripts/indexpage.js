@@ -11,10 +11,10 @@ const vueinst = new Vue({
 async function toggleDog(){
   vueinst.showing_dog = !vueinst.showing_dog; // toggle dog showing/hiding
   if (vueinst.showing_dog){ // if showing, get the image for the dog
-    fetch('https://dog.ceo/api/breeds/image/random')
-    .then((response) => response.json())
+    fetch('https://dog.ceo/api/breeds/image/random') // send GET request
+    .then((response) => response.json()) // parse as JSON
     .then((data) => {
-      vueinst.image_url = data.message;
+      vueinst.image_url = data.message; // set the vue variable
     });
   }
 }
