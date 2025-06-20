@@ -45,7 +45,9 @@ router.post('/login', async (req, res) => {
     res.status(400).json({error: 'Username not found'});
   }
   if (rows.length > 1){
-    res.status(500).json({error: 'Internal server error'})
+    console.log("Several users with same username in database");
+    console.log(rows);
+    res.status(500).json({error: 'Internal server error'});
   }
   if (password === rows[0].)
 
