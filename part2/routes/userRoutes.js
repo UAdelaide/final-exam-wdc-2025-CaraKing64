@@ -91,14 +91,14 @@ router.post('/logout', async (req, res) => {
   if (!req.session.isLoggedIn){
     res.sendFile('public/index.html', options);
   }
-  var username = req.session.username;
-  console.log(`${username} logged out`);
+  console.log(`${req.session.username} logged out`);
   req.session.destroy(function(err) {
     if (err){
       console.log("Unable to access session");
       console.log(err);
     }
   });
+  console.log(`${req.session.username} logged out`);
 
   res.sendFile('public/index.html', options);
 });
