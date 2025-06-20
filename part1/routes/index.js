@@ -213,13 +213,16 @@ router.get('/api/walkers/summary', async function(req, res, next){
   console.log(ratings);
   console.log(completedwalks);
   var data = [];
+
+  // loop through all the walkers
   for (let i = 0; i < walkers.length; i++){
     var w = {
       walker_username: walkers[i].username
     };
+    // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
       if (ratings[j].username == w.walker_username){
-        
+
       }
     }
   }
