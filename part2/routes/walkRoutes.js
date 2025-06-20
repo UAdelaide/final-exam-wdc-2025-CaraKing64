@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
 // POST a new walk request (from owner)
 router.post('/', async (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   const { dog_name, requested_time, duration_minutes, location } = req.body;
 
   try {
