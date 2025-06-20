@@ -209,9 +209,9 @@ router.get('/api/walkers/summary', async function(req, res, next){
   const [ratings] = await db.execute(`SELECT username, rating FROM (Users INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id)`);
   const [completedwalks] = await db.execute(`SELECT username FROM WalkApplications INNER JOIN Users ON WalkApplications.walker_id = Users.user_id WHERE status = 'accepted'`);
 
-  console.log(walkers);
-  console.log(ratings);
-  console.log(completedwalks);
+  // console.log(walkers);
+  // console.log(ratings);
+  // console.log(completedwalks);
   var data = [];
 
   // loop through all the walkers
