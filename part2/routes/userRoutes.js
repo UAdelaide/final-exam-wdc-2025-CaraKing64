@@ -41,6 +41,7 @@ router.post('/login', async (req, res) => {
   console.log(username, password);
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
   console.log(rows);
+  var match = null;
   
 
 
