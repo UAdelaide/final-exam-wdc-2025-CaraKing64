@@ -160,5 +160,6 @@ section {
   color: red;
   border-style: solid;
   border-color: red;
-  align
+  float: right;
+
 }
