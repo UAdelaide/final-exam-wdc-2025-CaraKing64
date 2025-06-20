@@ -134,10 +134,11 @@ router.get('/api/dogs', async function(req, res, next){
   console.log("requested dogs");
 
   db.all('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)', async function(err, rows){
-    for (let i = 0; i < rows.length)
+    for (let i = 0; i < rows.length; i++){
+      console.log(rows);
+    }
+    res.send()
   });
-
-  res.send('dog');
 });
 
 module.exports = router;
