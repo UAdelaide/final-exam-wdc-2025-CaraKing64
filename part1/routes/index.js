@@ -217,7 +217,11 @@ router.get('/api/walkers/summary', async function(req, res, next){
     var w = {
       walker_username: walkers[i].username
     };
-    for (let j = 0; j < ratings.)
+    for (let j = 0; j < ratings.length; j++){
+      if (ratings[j].username == w.walker_username){
+        
+      }
+    }
   }
 
 });
