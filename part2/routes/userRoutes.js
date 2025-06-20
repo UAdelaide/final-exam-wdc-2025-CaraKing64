@@ -44,6 +44,16 @@ router.post('/login', async (req, res) => {
     // User is already logged in
     username = req.session.username;
     const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
+    if (rows[0].role === 'owner'){
+      res.sendFile(`public/owner-dashboard.html`, options);
+    } else if (rows[0].role === 'walker'){
+      res.sendFile(`public/walker-dashboard.html`, options);
+    } else {
+      console.log("Has role that is neither owner nor walker");
+      console.log(rows[0]);
+      res.status(400).json({error: 'Invalid user data'});
+    }
+  }
 
   }
   username = req.body.username;
