@@ -242,6 +242,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
       }
     }
 
+    // remove unwanted variables
     delete w.rating_sum;
     res_rows.push(w);
   }
