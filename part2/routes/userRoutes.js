@@ -57,7 +57,9 @@ router.post('/login', async (req, res) => {
     res.send('success');
     if (rows[0].role === 'owner'){
       res.sendFile(`public/owner-dashboard.html`);
-    } else if (rows[0].role === 'walker')
+    } else if (rows[0].role === 'walker'){
+      res.sendFile(`public/walker-dashboard.html`);
+    }
   } else {
     res.status(403).json({error: 'Password incorrect'});
   }
