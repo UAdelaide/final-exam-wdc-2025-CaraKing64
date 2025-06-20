@@ -60,6 +60,8 @@ router.post('/login', async (req, res) => {
     } else if (rows[0].role === 'walker'){
       res.sendFile(`public/walker-dashboard.html`);
     } else {
+      console.log("Has role that is neither owner nor walker");
+      console.log(rows[0]);
       res.status(400).json({error: ''});
     }
   } else {
