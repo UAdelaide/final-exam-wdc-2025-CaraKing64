@@ -38,14 +38,15 @@ router.get('/me', (req, res) => {
 var options = { root: '.' };
 // POST login
 router.post('/login', async (req, res) => {
+  var session, password;
   if (req.session.isLoggedIn){
     // User is already logged in
-    username = req.session.username;
+    var username = req.session.username;
     const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
 
 
   }
-  const { username, password } = req.body;
+  { username, password } = req.body;
   // Get the user with the provided username
   const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
   if (rows.length < 0){
