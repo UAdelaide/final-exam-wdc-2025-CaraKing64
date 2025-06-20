@@ -102,8 +102,10 @@
         }
 
         async function loadDogs(){
-          const res = await fetch('/api/dogs');
-          
+          try {
+            const res = await fetch('/api/dogs');
+            dogs.value = await res.json();
+          } catch (err)
         }
 
         async function submitWalkRequest() {
