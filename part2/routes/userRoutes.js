@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
   } else if (rows.length > 1){
     console.log("Several users with same username in database");
     console.log(rows);
-    res.status(500).json({error: 'Internal server error'});
+    res.status(500).json({error: 'Invalid user data'});
   } else if (password === rows[0].password_hash){
     req.session.isLoggedIn = true;
     req.session.username = username;
@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
     } else {
       console.log("Has role that is neither owner nor walker");
       console.log(rows[0]);
-      res.status(400).json({error: ''});
+      res.status(400).json({error: 'Invalid user data'});
     }
   } else {
     res.status(403).json({error: 'Password incorrect'});
