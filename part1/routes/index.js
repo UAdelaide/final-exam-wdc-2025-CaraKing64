@@ -140,6 +140,7 @@ router.get('/api/dogs', async function(req, res, next){
       size: rows[i][1],
       owner_username: rows[i][2]
     });
+    console.log(res_rows);
   }
   res.send(res_rows);
 });
