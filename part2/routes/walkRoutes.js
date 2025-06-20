@@ -62,11 +62,11 @@ router.post('/:id/apply', async (req, res) => {
 router.get('/dogs', async (req, res) => {
   var username = req.session.username;
   console.log(`Getting dogs for ${username}`);
-  // run db query to find the dogs 
+  // run db query to find the dogs associated with this username
   const [row] = await db.query('SELECT dog_id, owner_id, name, size FROM (Dogs INNER JOIN Users ON Dogs.owner_id = Users.user_id) WHERE Users.username = ?', [username]);
   if (row.length === 0){ // if there are no dogs in the database for this username
     res.status(400).json({error: 'No dogs found for this user'});
-  } else {
+  } else { // else, send the list of dogs that are in the database for this username
     res.send(row);
   }
 });
