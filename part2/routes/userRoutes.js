@@ -92,8 +92,8 @@ router.post('/logout', async (req, res) => {
     res.sendFile('public/index.html', options);
   }
   console.log(`${req.session.username} logged out`);
-  req.session.destroy(function(err) { // destroy the req session so that 
-    if (err){
+  req.session.destroy(function(err) { // destroy the req session so that anything that tries to reference the session will fail
+    if (err){ // if the session is already destroyed
       console.log("Unable to access session");
       console.log(err);
     }
