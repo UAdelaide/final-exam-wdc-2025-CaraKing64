@@ -169,6 +169,11 @@ router.get('/api/walkrequests/open', async function(req, res, next){
   res.send(res_rows);
 });
 
+router.get('/api/walkers/summary', async function(req, res, next){
+  const [rows] = await db.execute(``);
 
+  res.status(200);
+  
+});
 
 module.exports = router;
