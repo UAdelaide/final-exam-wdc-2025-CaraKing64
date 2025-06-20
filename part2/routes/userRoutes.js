@@ -33,7 +33,7 @@ router.get('/me', (req, res) => {
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  res.json(req.session.user);
+  res.json(req.session);
 });
 
 var options = { root: '.' };
