@@ -161,4 +161,12 @@ section {
   border-style: solid;
   border-color: red;
   position: absolute;
-} position: absolute;
+  
+}
+
+#navbar-ul {
+  padding: ;
+  justify-content: right;
+  list-style: none;
+  display: flex;
+}
