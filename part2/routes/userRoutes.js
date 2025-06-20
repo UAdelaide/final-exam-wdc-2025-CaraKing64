@@ -71,16 +71,16 @@ router.post('/login', async (req, res) => {
     req.session.isLoggedIn = true;
     req.session.username = username;
     console.log(`${username} logged in`);
-    if (rows[0].role === 'owner'){ // user is owner so it sends the owner-dashboard
+    if (rows[0].role === 'owner'){ // user is owner so it sends the owner dashboard
       res.sendFile(`public/owner-dashboard.html`, options);
     } else if (rows[0].role === 'walker'){ // user is walker so it sends the walker dashboard
       res.sendFile(`public/walker-dashboard.html`, options);
-    } else {
+    } else { // user is somehow not owner or walker
       console.log("Has role that is neither owner nor walker");
       console.log(rows[0]);
       res.status(400).json({error: 'Invalid user data'});
     }
-  } else {
+  } else { // username correct but password didn't match
     res.status(403).json({error: 'Password incorrect'});
   }
 });
