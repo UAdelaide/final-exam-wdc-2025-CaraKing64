@@ -160,7 +160,7 @@ section {
   color: red;
   border-style: solid;
   border-color: red;
-  border-width: 1%;
+  border-width: 0.1rem;
   position: absolute;
   margin: 0 0 0 50%;
 }
