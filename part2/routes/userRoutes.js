@@ -34,7 +34,9 @@ router.get('/me', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   const [row] = await db.query(`SELECT user_id, username, email, role, created_at FROM Users WHERE Username = ?`, [req.session.username]);
-  if (row.length !==)
+  if (row.length < 1){
+    res.status(400).send()
+  }
   res.send(row[0]);
 });
 
