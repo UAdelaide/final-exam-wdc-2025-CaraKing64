@@ -121,7 +121,7 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Ginger'), '2025-06-10 12:00:00', 60, 'Lakelands', 'open'),
         ((SELECT dog_id FROM Dogs WHERE name = 'Rex'), '2025-05-11 8:00:00', 20, 'Explex Court', 'completed'),
-        ((SELECT dog_id FROM Dogs WHERE name = 'Gojo'), '2025-06-12 15:00:00', 40, 'Jujutsu High', 'accepted')
+        ((SELECT dog_id FROM Dogs WHERE name = 'Gojo'), '2025-06-12 15:00:00', 40, 'Jujutsu High', 'completed')
       `);
     }
 
