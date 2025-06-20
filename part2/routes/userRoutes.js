@@ -36,11 +36,11 @@ router.get('/me', async (req, res) => {
   const [row] = await db.query(`SELECT user_id, username, email, role, created_at FROM Users WHERE Username = ?`, [req.session.username]);
   if (row.length < 1){
     res.status(500).json({error: 'No user exists in the database with your username'});
+  } else if (row.length > 1){
+    res.status(500).json({error: 'More than 1 user exists in the database with your username'});
+  } else {
+    res.send(row[0]);
   }
-  if (row.length > 1){
-    res.status(500).json({error: 'More than 1 user exists in the database with your username'})
-  }
-  res.send(row[0]);
 });
 
 var options = { root: '.' };
