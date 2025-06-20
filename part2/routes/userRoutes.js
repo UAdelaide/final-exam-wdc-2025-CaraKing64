@@ -40,7 +40,7 @@ var options = { root: '.' };
 router.post('/login', async (req, res) => {
   if (req.session.isLoggedIn){
     // User is already logged in
-res.status(403).json({error: 'You are already logged in'});
+    const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
 
 
   }
