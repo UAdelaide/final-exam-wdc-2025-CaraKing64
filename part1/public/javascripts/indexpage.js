@@ -7,4 +7,6 @@ const vueinst = new Vue({
   }
 });
 
-function getDog
+function getDogImage(){
+  fetch()
+}
