@@ -212,8 +212,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // console.log(walkers);
   // console.log(ratings);
   // console.log(completedwalks);
-  var data = [];
-
+  var res= [];
   // loop through all the walkers
   for (let i = 0; i < walkers.length; i++){
     var w = {
@@ -239,8 +238,12 @@ router.get('/api/walkers/summary', async function(req, res, next){
 
     // count the number of completed walks
     for (let j = 0; j < completedwalks.length; j++){
-      if (completedwalks[j].username)
+      if (completedwalks[j].username == w.walker_username){
+        w.completed_walks += 1;
+      }
     }
+
+    delete
   }
 
 });
