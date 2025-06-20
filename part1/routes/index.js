@@ -204,8 +204,9 @@ router.get('/api/walkrequests/open', async function(req, res, next){
 });
 
 router.get('/api/walkers/summary', async function(req, res, next){
-  // run the SQL query
+  // get all users who are dog walkers
   const [walkers] = await db.execute(`SELECT username FROM Users WHERE role = 'walker'`);
+  // get all ratings for all walkers
   const [ratings] = await db.execute(`SELECT username, rating FROM (Users INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id)`);
   const [completedwalks] = await db.execute(`SELECT username FROM WalkApplications INNER JOIN Users ON WalkApplications.walker_id = Users.user_id WHERE status = 'accepted'`);
 
