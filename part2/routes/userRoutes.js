@@ -52,9 +52,6 @@ router.post('/login', async (req, res) => {
     req.session.isLoggedIn = true;
     req.session.username = username;
     console.log(`${username} logged in`);
-    console.log(rows[0]);
-    res.status(200);
-    res.send('success');
     if (rows[0].role === 'owner'){
       res.sendFile(`public/owner-dashboard.html`, options);
     } else if (rows[0].role === 'walker'){
