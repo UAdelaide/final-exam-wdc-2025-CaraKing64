@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
       )
     `);
     await db.execute(`
-      CREATE TABLE Dogs (
+      CREATE TABLE IF NOT EXISTS Dogs (
         dog_id INT AUTO_INCREMENT PRIMARY KEY,
         owner_id INT NOT NULL,
         name VARCHAR(50) NOT NULL,
@@ -56,7 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
       )
     `);
     await db.execute(`
-      CREATE TABLE WalkRequests (
+      CREATE TABLE IF NOT EXISTS WalkRequests (
         request_id INT AUTO_INCREMENT PRIMARY KEY,
         dog_id INT NOT NULL,
         requested_time DATETIME NOT NULL,
