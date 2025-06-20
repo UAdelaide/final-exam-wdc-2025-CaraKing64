@@ -40,6 +40,7 @@ var options = { root: '.' };
 router.post('/login', async (req, res) => {
   if (req.session.isLoggedIn){
     // User is already logged in
+    username = req.session.username;
     const [rows] = await db.query(`SELECT * FROM Users WHERE username = ?`, [username]);
 
 
