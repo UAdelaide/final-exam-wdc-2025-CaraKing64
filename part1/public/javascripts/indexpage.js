@@ -8,5 +8,7 @@ const vueinst = new Vue({
 });
 
 function getDogImage(){
-  fetch()
+  fetch('https://dog.ceo/api/breeds/image/random/3', {
+    method
+  })
 }
