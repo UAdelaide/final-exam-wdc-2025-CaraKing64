@@ -56,9 +56,9 @@ router.post('/login', async (req, res) => {
     res.status(200);
     res.send('success');
     if (rows[0].role === 'owner'){
-      res.sendFile(`public/owner-dashboard.html`);
+      res.sendFile(`public/owner-dashboard.html`, options);
     } else if (rows[0].role === 'walker'){
-      res.sendFile(`public/walker-dashboard.html`);
+      res.sendFile(`public/walker-dashboard.html`, options);
     } else {
       console.log("Has role that is neither owner nor walker");
       console.log(rows[0]);
