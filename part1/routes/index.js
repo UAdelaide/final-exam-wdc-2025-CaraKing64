@@ -218,6 +218,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     var w = {
       walker_username: walkers[i].username,
       total_ratings: 0,
+      w.average_rating = null,
       rating_sum: 0,
       completed_walks: 0
     };
