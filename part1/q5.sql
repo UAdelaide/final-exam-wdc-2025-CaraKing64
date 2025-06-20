@@ -6,10 +6,9 @@ INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALU
 (
   (SELECT request_id FROM WalkRequests WHERE location = 'Explex Court'),
   (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-(SELECT owner_id FROM WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id WHERE location = 'Explex Court'),
-5),
-
-(
+  (SELECT owner_id FROM WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id WHERE location = 'Explex Court'),
+  5
+), (
   (SELECT request_id FROM WalkRequests WHERE location = 'Jujutsu High'),
   (SELECT user_id FROM Users WHERE username = 'bobwalker'),
   (SELECT owner_id FROM WalkRequests INNER JOIN Dogs ON WalkRequests.dog_id = Dogs.dog_id WHERE location = 'Jujutsu High'),
