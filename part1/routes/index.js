@@ -173,9 +173,10 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // run the SQL query
   const [rows] = await db.execute(``);
 
+  // need to make a new object for each row to rename the 'username' attribute to 'owner_username'
   var res_rows = [];
   for (let i = 0; i < rows.length; i++){
-
+    console.log(rows[i]);
   }
   res.status(200);
 
