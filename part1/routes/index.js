@@ -137,7 +137,8 @@ router.get('/api/dogs', async function(req, res, next){
     for (let i = 0; i < rows.length; i++){
       console.log(rows);
     }
-    res.send()
+    res.status(200);
+    res.send(rows);
   });
 });
 
