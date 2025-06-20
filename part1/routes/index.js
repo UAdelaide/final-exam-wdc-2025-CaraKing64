@@ -124,8 +124,8 @@ let db;
         ((SELECT dog_id FROM Dogs WHERE name = 'Gojo'), '2025-06-12 15:00:00', 40, 'Jujutsu High', 'completed')
       `);
     }
-    const [rows4] = await db.execute('SELECT COUNT(*) FROM WalkRatings');
-    if (rows4[0].count === 0){
+    const [rows5] = await db.execute('SELECT COUNT(*) FROM WalkRatings');
+    if (rows5[0].count === 0){
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (
