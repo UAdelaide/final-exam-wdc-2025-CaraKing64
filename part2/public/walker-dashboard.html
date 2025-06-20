@@ -55,7 +55,7 @@
 
 
         async function getUserId(){
-          // send a get request to get the user data
+          // send a get request to get the current user's data
           const res = await fetch('/api/users/me').then((response) => response.json());
           console.log(res);
           // return the current user's user_id
@@ -74,7 +74,7 @@
 
         async function applyToWalk(requestId) {
           try {
-            var user = await getUserId();
+            var user = await getUserId(); // set the user to be the current user
             console.log('User ID is ' + user);
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
