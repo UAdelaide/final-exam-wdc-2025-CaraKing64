@@ -218,28 +218,26 @@ router.get('/api/walkers/summary', async function(req, res, next){
     var w = {
       walker_username: walkers[i].username,
       total_ratings: 0,
-      w.average_rating = null,
+      average_rating: null,
       rating_sum: 0,
       completed_walks: 0
     };
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
       // if the current rating is for the current walker
-      if (ratings[j].username == w.walker_username){
+      if (ratings[j].username === w.walker_username){
         w.total_ratings += 1;
         w.rating_sum += ratings[j].rating;
       }
     }
     // if there were ratings, average them
-    if (w.total_ratings != 0){
+    if (w.total_ratings !== 0){
       w.average_rating = w.rating_sum / w.rating_count;
-    } else {
-      w.average_rating = null;
     }
 
     // count the number of completed walks
     for (let j = 0; j < completedwalks.length; j++){
-      if (completedwalks[j].username == w.walker_username){
+      if (completedwalks[j].username === w.walker_username){
         w.completed_walks += 1;
       }
     }
