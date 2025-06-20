@@ -55,7 +55,8 @@
 
 
         async function getUserId(){
-          return await fetch('/api/users/me').json().user_id;
+          const res = await fetch('/api/users/me')
+          return res.json().user_id;
         }
 
         async function loadWalkRequests() {
