@@ -33,7 +33,8 @@ router.get('/me', async (req, res) => {
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  const [row] = await db.query(`SELECT * FROM Users WHERE Username = ?`, [req.session.username]);
+  const [row] = await db.query(`SELECT user_id, username, email, role, created_at FROM Users WHERE Username = ?`, [req.session.username]);
+  if (row.length !==)
   res.send(row[0]);
 });
 
