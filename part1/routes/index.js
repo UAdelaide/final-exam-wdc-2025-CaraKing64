@@ -131,8 +131,11 @@ let db;
 })();
 
 router.get('/api/dogs', async function(req, res, next){
-  var res_r
+  var res_rows = [];
   const [rows] = await db.execute('SELECT name, size, username FROM (Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id)');
+  for (let i = 0; i < rows.length; i++){
+    var newr = 
+  }
   res.send(rows);
 });
 
