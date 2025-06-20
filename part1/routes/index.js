@@ -217,10 +217,12 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // loop through all the walkers
   for (let i = 0; i < walkers.length; i++){
     var w = {
-      walker_username: walkers[i].username
+      walker_username: walkers[i].username,
+      rating_count: 0
     };
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
+      // if the current rating is for the current walker
       if (ratings[j].username == w.walker_username){
 
       }
