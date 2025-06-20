@@ -120,7 +120,14 @@ let db;
         ((SELECT user_id FROM Users WHERE username = 'dantheman'), 'Gojo', 'large');
       `);
     }
-    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM ')
+    const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    if (rows3[0].count === 0){
+      await db.execute(`
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+        ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = 'Ginger'), '2025-06-10 12:00:00', 60, 'Lakelands', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Rex'), '2025-05-11 8:00:00', 20, 'Explex Court', 'completed'), ((SELECT dog_id FROM Dogs WHERE name = 'Gojo'), '2025-06-12 15:00:00', 40, 'Jujutsu High', 'accepted');`);
+    }
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
