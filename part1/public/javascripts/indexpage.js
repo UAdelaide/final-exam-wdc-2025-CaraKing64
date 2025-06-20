@@ -8,6 +8,8 @@ const vueinst = new Vue({
 });
 
 async function getDogImage(){
+  vueinst.showing_dog = !vueinst.showing_dog;
+  if (showing_dog)
   var response = await fetch('https://dog.ceo/api/breeds/image/random');
   vueinst.image_url = response.body.message;
   console.log(vueinst.image_url);
