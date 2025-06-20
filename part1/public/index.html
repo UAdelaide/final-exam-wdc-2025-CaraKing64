@@ -28,8 +28,9 @@
       <button type="submit" >🚨 Show me a number! (This button doesn't work)</button>
     </div>
     <img v-if="showing_dog" src="https://images.dog.ceo/breeds/mountain-bernese/n02107683_1468.jpg" alt="Random dog!">
-    <div v-if="showing_dog"></div>
-    <h1 v-if="showing_dog">Dog of the day!</h1>
+    <div v-if="showing_dog">
+      <h1>Dog of the day!</h1>
+    </div>
 
   </div>
 </body>
