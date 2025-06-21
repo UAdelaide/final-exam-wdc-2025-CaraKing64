@@ -62,7 +62,7 @@
             const res = await fetch('/api/walks/alldogs');
             dogs.value = await res.json();
             console.log(dogs.value);
-            for (let i = 0; i < dogs[].length; i++){
+            for (let i = 0; i < dogs.value.length; i++){
               console.log(dogs.value[i]);
             }
           } catch (err) {
