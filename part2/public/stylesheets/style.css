@@ -175,3 +175,8 @@ section {
   width:  auto;
   table-layout: auto;
 }
+
+#dog-table img {
+  height: 10%;
+  width: 10%;
+}
