@@ -36,7 +36,7 @@
         <tr v-for="dog in dogs" v-bind:style="{ backgroundColor: dog.table_colour }">
           <!-- the reason for applying this css inline to each <td> is because boostraps
                is applying some css to the td that i can't override by applying
-               to the <tr>, so I have to manually apply to all <td> elements -->
+               to the <tr>, so I have to manually apply to all <td> elements inline -->
           <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.dog_id }}</td>
           <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.name }}</td>
           <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.size }}</td>
