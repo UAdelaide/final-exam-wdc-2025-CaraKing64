@@ -88,9 +88,6 @@ router.get('/alldogs', async (req, res) => {
       var colours = ['lightgrey', 'white'];
       dog.table_colour = colours[i%2];
       dogs.push(dog);
-      // dogs.value.photo = res.message;
-      // console.log(dogs.value);
-      // console.log(`${dogs.value.name} has photo ${dogs.value.photo}`);
     }
     res.send(rows);
   }
