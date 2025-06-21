@@ -88,10 +88,11 @@ router.get('/alldogs', async (req, res) => {
       res2 = await res2.json();
       var dog = rows[i];
       dog.photo = res2.message;
-      // get the background colour
+      // get the background colour that it will use in the table
       var colours = ['#e0e0e0', 'white'];
       dog.table_colour = colours[i%2];
-      dog.alt = ''
+      // alt text for the image
+      dog.alt = `An image of a dog named `
       dogs.push(dog);
     }
     res.send(rows);
