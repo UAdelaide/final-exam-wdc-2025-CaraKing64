@@ -64,8 +64,8 @@
             console.log(dogs.value);
             for (let i = 0; i < dogs.value.length; i++){
               var res2 = await fetch('/api/walks/alldogs');
-              dogs.value.photo = await res.json();
-              console.log(dogs.value[i]);
+              dogs.value.photo = await res.json().message;
+              console.log(dogs.value.photo);
             }
           } catch (err) {
             error.value = 'Failed to load dogs';
