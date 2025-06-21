@@ -33,7 +33,7 @@
           <td><strong>Owner ID</strong></td>
           <td><strong>Photo</strong></td>
         </tr>
-        <tr v-for="dog in dogs" v-bind:style="background-colour: ">
+        <tr v-for="dog in dogs" v-bind:style="background-color: dog.table_colour">
           <td>{{ dog.dog_id }}</td>
           <td>{{ dog.name }}</td>
           <td>{{ dog.size }}</td>
