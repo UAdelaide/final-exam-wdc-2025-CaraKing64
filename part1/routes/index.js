@@ -218,10 +218,10 @@ router.get('/api/walkers/summary', async function(req, res, next){
     var w = { // walker object
       walker_username: walkers[i].username,
       walker_id: walkers[i].user_id,
-      total_ratings: 0,
+      total_ratings: ,
       average_rating: null,
       rating_sum: 0,
-      completed_walks: 0
+      completed_walks: completedwalks.length;
     };
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
