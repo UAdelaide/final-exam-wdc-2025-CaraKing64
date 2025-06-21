@@ -172,5 +172,6 @@ section {
 }
 
 #dog-table {
-  
+  width: auto;
+  table-layout: auto;
 }
