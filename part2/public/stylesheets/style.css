@@ -173,6 +173,8 @@ section {
 
 body {
   width: 50%;
+  align-items: center;
+  
 }
 
 #dog-table {
