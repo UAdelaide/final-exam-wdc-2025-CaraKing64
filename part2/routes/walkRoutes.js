@@ -87,7 +87,7 @@ router.get('/alldogs', async (req, res) => {
       console.log(res2.message);
       // dogs.value.photo = res.message;
       // console.log(dogs.value);
-      console.log(`${dogs.value.name} has photo ${dogs.value.photo}`);
+      // console.log(`${dogs.value.name} has photo ${dogs.value.photo}`);
     }
     res.send(rows);
   }
