@@ -211,6 +211,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // get all completed walks (assuming that accepted walks are completed walks and nothing went wrong / no unlogged cancellations)
   const [completedwalks] = await db.execute(`SELECT username FROM WalkApplications INNER JOIN Users ON WalkApplications.walker_id = Users.user_id WHERE status = 'accepted'`);
 
+  console.log(completedwalks);
   // loop through all the walkers and process them
   var res_rows = [];
   for (let i = 0; i < walkers.length; i++){
