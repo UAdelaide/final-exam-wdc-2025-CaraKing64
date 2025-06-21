@@ -34,11 +34,11 @@
           <td><strong>Photo</strong></td>
         </tr>
         <tr v-for="dog in dogs" v-bind:style="{ backgroundColor: dog.table_colour }">
-          <td>{{ dog.dog_id }}</td>
-          <td>{{ dog.name }}</td>
-          <td>{{ dog.size }}</td>
-          <td>{{ dog.owner_id }}</td>
-          <td><img v-bind:src="dog.photo"></td>
+          <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.dog_id }}</td>
+          <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.name }}</td>
+          <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.size }}</td>
+          <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.owner_id }}</td>
+          <td v-bind:style="{ backgroundColor: dog.table_colour }"><img v-bind:src="dog.photo"></td>
         </tr>
       </table>
     </div>
