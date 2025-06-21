@@ -75,11 +75,19 @@ router.get('/dogs', async (req, res) => {
 
 router.get('/alldogs', async (req, res) => {
 
-  const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs');
+  const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM DOGS');
   if (rows.length < 1){
     res.status(500).json({error: 'No dogs in database'});
   } else {
-    res.send(rows);
+    for (let i = 0; i < dogs.value.length; i++){
+      var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
+      res2 = await res2.json();
+      console.log(res2.message);
+      dogs.value.photo = res.message;
+      console.log(dogs.value);
+      console.log(`${dogs.value.name} has photo ${dogs.value.photo}`);
+        }
+    res.send(rows)
   }
 });
 
