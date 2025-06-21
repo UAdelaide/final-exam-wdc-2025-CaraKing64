@@ -78,7 +78,7 @@ router.get('/dogs', async (req, res) => {
 router.get('/alldogs', async (req, res) => {
   // get the data from the database about all the dogs
   const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs');
-  if (rows.length < 1){
+  if (rows.length < 1){ // if it couldn't find any dog's in the database
     res.status(500).json({error: 'No dogs in database'});
   } else {
     var dogs = [];
