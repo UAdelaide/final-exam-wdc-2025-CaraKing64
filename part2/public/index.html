@@ -32,16 +32,10 @@
 
   <script>
     const { createApp } = Vue;
+          console.log(res);
 
     createApp({
       setup() {
-        const form = ref({
-          dog_name: '',
-          requested_time: '',
-          duration_minutes: '',
-          location: ''
-        });
-
         const dogs = ref([]);
         const message = ref('');
         message.value = 'Welcome to the Dog Walking Service!';
