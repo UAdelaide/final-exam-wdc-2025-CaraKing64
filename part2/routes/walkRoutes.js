@@ -74,8 +74,7 @@ router.get('/dogs', async (req, res) => {
 });
 
 // this route gets the information about all dogs.
-// Additionally for ease of use, also some styling colour that
-// they will have inside
+// Additionally for ease of use, it includes some styling that the html/css use for index.html
 router.get('/alldogs', async (req, res) => {
   const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs');
   if (rows.length < 1){
@@ -89,6 +88,7 @@ router.get('/alldogs', async (req, res) => {
       dog.photo = res2.message;
       var colours = ['#e0e0e0', 'white'];
       dog.table_colour = colours[i%2];
+      dog.alt = ''
       dogs.push(dog);
     }
     res.send(rows);
