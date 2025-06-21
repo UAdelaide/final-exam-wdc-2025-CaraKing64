@@ -85,7 +85,7 @@ router.get('/alldogs', async (req, res) => {
       res2 = await res2.json();
       var dog = rows[i];
       dog.photo = res2.message;
-      var colours = ['lightgrey', 'white'];
+      var colours = ['#aaaaaa', 'white'];
       dog.table_colour = colours[i%2];
       dogs.push(dog);
     }
