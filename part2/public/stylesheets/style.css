@@ -171,8 +171,11 @@ section {
   display: flex;
 }
 
-#dog-table {
+body {
   width: 50%;
+}
+
+#dog-table {
   table-layout: auto;
 }
 
