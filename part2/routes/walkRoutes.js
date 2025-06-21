@@ -73,8 +73,9 @@ router.get('/dogs', async (req, res) => {
   }
 });
 
-// this route gets the information about all dogs and for easiness, also the background colour that
-// they will have inside 
+// this route gets the information about all dogs.
+// Additionally for ease of use, also some styling colour that
+// they will have inside
 router.get('/alldogs', async (req, res) => {
   const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs');
   if (rows.length < 1){
