@@ -225,7 +225,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
       // if the current rating is for the current walker, increment it and add the rating to the sum to average at the end
-      if (ratings[j].username === w.user_id){
+      if (ratings[j].username === w.walker_id){
         w.total_ratings += 1;
         w.rating_sum += ratings[j].rating;
       }
