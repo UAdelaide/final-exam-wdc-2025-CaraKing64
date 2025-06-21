@@ -211,7 +211,6 @@ router.get('/api/walkers/summary', async function(req, res, next){
   // get all completed walks (assuming that accepted walks are completed walks and nothing went wrong / no unlogged cancellations)
   const [completedwalks] = await db.execute(`SELECT walker_id, WalkRequests.status, WalkApplications.status FROM WalkApplications INNER JOIN WalkRequests ON WalkApplications.request_id = WalkRequests.request_id WHERE WalkRequests.status = 'completed' and WalkApplications.status = 'accepted'`);
 
-  console.log(completedwalks);
   // loop through all the walkers and process them
   var res_rows = [];
   for (let i = 0; i < walkers.length; i++){
@@ -226,7 +225,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     // count the number of ratings
     for (let j = 0; j < ratings.length; j++){
       // if the current rating is for the current walker, increment it and add the rating to the sum to average at the end
-      if (ratings[j].username === w.walker_username){
+      if (ratings[j].username === w.user_id){
         w.total_ratings += 1;
         w.rating_sum += ratings[j].rating;
       }
