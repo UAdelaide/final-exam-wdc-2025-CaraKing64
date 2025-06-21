@@ -63,13 +63,7 @@
             dogs.value = await res.json();
             console.log(dogs.value);
             for (let i = 0; i < dogs.value.length; i++){
-              fetch('https://dog.ceo/api/breeds/image/random') // send GET request
-              .then((response) => response.json()) // parse as JSON
-              .then((data) => {
-              vueinst.image_url = data.message; // set the vue variable
-              });
-  }
-              var res2 = await fetch('/api/walks/alldogs');
+              var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
               dogs.value.photo = await res.json().message;
               console.log(dogs.value.photo);
             }
