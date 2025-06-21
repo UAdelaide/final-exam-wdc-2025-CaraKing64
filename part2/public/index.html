@@ -50,6 +50,7 @@
           try {
             const res = await fetch('/api/walks/alldogs');
             dogs.value = await res.json();
+            console.log(dogs.value);
           } catch (err) {
             error.value = 'Failed to load dogs';
           }
