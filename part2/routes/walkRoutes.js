@@ -74,7 +74,8 @@ router.get('/dogs', async (req, res) => {
 });
 
 router.get('/alldogs', async (req, res) => {
-  
+
+  const 
 })
 
 module.exports = router;
