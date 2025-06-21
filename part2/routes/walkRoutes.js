@@ -82,6 +82,7 @@ router.get('/alldogs', async (req, res) => {
     res.status(500).json({error: 'No dogs in database'});
   } else {
     var dogs = [];
+    // for each dog
     for (let i = 0; i < rows.length; i++){
       // get a random photo for the dog
       var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -92,7 +93,9 @@ router.get('/alldogs', async (req, res) => {
       var colours = ['#e0e0e0', 'white'];
       dog.table_colour = colours[i%2];
       // alt text for the image
-      dog.alt = `An image of a dog named `
+      dog.alt = `An image of a dog named ${dog.name}`;
+
+      // add to list of dogs
       dogs.push(dog);
     }
     res.send(rows);
