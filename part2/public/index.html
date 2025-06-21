@@ -35,13 +35,6 @@
 
     createApp({
       setup() {
-        return {
-          message: 'Welcome to the Dog Walking Service!'
-        };
-      }
-    }).mount('#app');
-    createApp({
-      setup() {
         const form = ref({
           dog_name: '',
           requested_time: '',
@@ -50,9 +43,6 @@
         });
 
         const dogs = ref([]);
-        const walks = ref([]);
-        const message = ref('');
-        const error = ref('');
 
         async function loadWalks() {
           try {
