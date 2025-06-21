@@ -84,7 +84,8 @@ router.get('/alldogs', async (req, res) => {
       console.log(rows[i]);
       var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
       res2 = await res2.json();
-      console.log(res2.message);
+      var dog = rows[i];
+      dog.photo = res2.message;
       // dogs.value.photo = res.message;
       // console.log(dogs.value);
       // console.log(`${dogs.value.name} has photo ${dogs.value.photo}`);
