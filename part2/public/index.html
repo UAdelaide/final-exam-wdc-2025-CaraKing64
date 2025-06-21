@@ -64,8 +64,8 @@
             console.log(dogs.value);
             for (let i = 0; i < dogs.value.length; i++){
               var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
-              dogs..= await res2.json();
-              console.log(dogs.value.photo);
+              res2 = await res2.json();
+              console.log(res2);
             }
           } catch (err) {
             error.value = 'Failed to load dogs';
