@@ -95,10 +95,11 @@ router.get('/alldogs', async (req, res) => {
       // alt text for the image
       dog.alt = `An image of a dog named ${dog.name}`;
 
-      // add to list of dogs
+      // add to list of processed dogs
       dogs.push(dog);
     }
-    res.send(rows);
+    // send the dogs
+    res.send(dogs);
   }
 });
 
