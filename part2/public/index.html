@@ -44,18 +44,9 @@
 
         const dogs = ref([]);
 
-        async function loadWalks() {
-          try {
-            const res = await fetch('/api/walks');
-            walks.value = await res.json();
-          } catch (err) {
-            error.value = 'Failed to load walk requests';
-          }
-        }
-
         async function loadDogs(){
           try {
-            const res = await fetch('/api/walks/dogs');
+            const res = await fetch('/api/walks/alldogs');
             dogs.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load dogs';
@@ -73,20 +64,6 @@
 
             if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
 
-            message.value = result.message;
-            error.value = '';
-            form.value = {
-              dog_id: '',
-              requested_time: '',
-              duration_minutes: '',
-              location: ''
-            };
-            loadWalks();
-          } catch (err) {
-            error.value = err.message;
-            message.value = '';
-          }
-        }
 
         onMounted(() => {
           loadWalks();
