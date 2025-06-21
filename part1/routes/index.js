@@ -217,6 +217,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
   for (let i = 0; i < walkers.length; i++){
     var w = { // walker object
       walker_username: walkers[i].username,
+      walker_id: walkers[i].walker_id,
       total_ratings: 0,
       average_rating: null,
       rating_sum: 0,
@@ -236,12 +237,13 @@ router.get('/api/walkers/summary', async function(req, res, next){
     }
     // count the number of completed walks
     for (let j = 0; j < completedwalks.length; j++){
-      if (completedwalks[j].username === w.walker_username){
+      if (completedwalks[j].username === w.walker_id){
         w.completed_walks += 1;
       }
     }
     // remove unwanted variables
     delete w.rating_sum;
+    delete w.walker_id;
     res_rows.push(w);
   }
   res.status(200);
