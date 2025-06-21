@@ -76,8 +76,8 @@ router.get('/dogs', async (req, res) => {
 router.get('/alldogs', async (req, res) => {
 
   const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM DOGS');
-  if (rows.length !=== 0){
-    res.status(500).json()
+  if (rows.length < 1){
+    res.status(500).json({error: 'No dogs in database'})
   }
 });
 
