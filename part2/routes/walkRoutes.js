@@ -83,10 +83,12 @@ router.get('/alldogs', async (req, res) => {
   } else {
     var dogs = [];
     for (let i = 0; i < rows.length; i++){
+      // get a random photo for the dog
       var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
       res2 = await res2.json();
       var dog = rows[i];
       dog.photo = res2.message;
+      // get the background colour
       var colours = ['#e0e0e0', 'white'];
       dog.table_colour = colours[i%2];
       dog.alt = ''
