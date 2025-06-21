@@ -64,7 +64,7 @@
             console.log(dogs.value);
             for (let i = 0; i < dogs.value.length; i++){
               var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
-              dogs.value.photo = await res.json().message;
+              dogs..= await res2.json();
               console.log(dogs.value.photo);
             }
           } catch (err) {
