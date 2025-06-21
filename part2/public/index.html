@@ -43,6 +43,7 @@
         });
 
         const dogs = ref([]);
+        const message = ref('');
 
         async function loadDogs(){
           try {
@@ -58,7 +59,8 @@
         });
 
         return {
-          dogs
+          dogs,
+          message
         };
       }
     }).mount('#app');
