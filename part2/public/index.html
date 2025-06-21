@@ -68,7 +68,7 @@
               console.log(res2.message);
               dogs.value.photo = res.message;
               console.log(dogs.value);
-              console.log(dogs.);
+              console.log(`${dogs.value.name} has photo ${dogs.value.photo}`);
             }
           } catch (err) {
             error.value = 'Failed to load dogs';
