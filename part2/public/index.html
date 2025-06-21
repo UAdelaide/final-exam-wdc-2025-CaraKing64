@@ -41,7 +41,7 @@
           <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.name }}</td>
           <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.size }}</td>
           <td v-bind:style="{ backgroundColor: dog.table_colour }">{{ dog.owner_id }}</td>
-          <td v-bind:style="{ backgroundColor: dog.table_colour }"><img alt="An image of a dog" v-bind:src="dog.photo"></td>
+          <td v-bind:style="{ backgroundColor: dog.table_colour }"><img v-bind:alt="An image of the dog called dog.name" v-bind:src="dog.photo"></td>
         </tr>
       </table>
     </div>
