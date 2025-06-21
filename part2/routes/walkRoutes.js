@@ -76,6 +76,7 @@ router.get('/dogs', async (req, res) => {
 // this route gets the information about all dogs.
 // Additionally for ease of use, it includes some styling that the html/css use for index.html
 router.get('/alldogs', async (req, res) => {
+  // get the data from the database about all the dogs
   const [rows] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs');
   if (rows.length < 1){
     res.status(500).json({error: 'No dogs in database'});
