@@ -79,7 +79,9 @@ router.get('/alldogs', async (req, res) => {
   if (rows.length < 1){
     res.status(500).json({error: 'No dogs in database'});
   } else {
+    var dogs = [];
     for (let i = 0; i < dogs.value.length; i++){
+      console.log(rows[i]);
       var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
       res2 = await res2.json();
       console.log(res2.message);
