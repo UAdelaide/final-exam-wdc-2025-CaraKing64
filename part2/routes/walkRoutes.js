@@ -75,7 +75,7 @@ router.get('/dogs', async (req, res) => {
 
 router.get('/alldogs', async (req, res) => {
 
-  const [row] = await db.query()
+  const [row] = await db.query('SELECT dog_id, name, size, owner_id' )
 })
 
 module.exports = router;
