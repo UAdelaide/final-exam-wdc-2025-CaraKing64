@@ -182,7 +182,7 @@ body {
 }
 
 #dog-table img {
-  height: auto;
-  width: 100px;
+  height: 100px;
+  width: auto;
   color: #e0e0e0
 }
