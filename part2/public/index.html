@@ -65,7 +65,8 @@
             for (let i = 0; i < dogs.value.length; i++){
               var res2 = await fetch('https://dog.ceo/api/breeds/image/random');
               res2 = await res2.json();
-              console.log(res2);
+              console.log(res2.message);
+              
             }
           } catch (err) {
             error.value = 'Failed to load dogs';
