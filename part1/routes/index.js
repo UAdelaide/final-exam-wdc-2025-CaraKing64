@@ -238,6 +238,7 @@ router.get('/api/walkers/summary', async function(req, res, next){
     for (let j = 0; j < completedwalks.length; j++){
       if (completedwalks[j].username === w.walker_id){
         w.completed_walks += 1;
+        console.log("Completed a walk");
       }
     }
     // remove unwanted variables
