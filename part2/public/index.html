@@ -53,30 +53,12 @@
           }
         }
 
-        async function submitWalkRequest() {
-          try {
-            const res = await fetch('/api/walks', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(form.value)
-            });
-            const result = await res.json();
-
-            if (!res.ok) throw new Error(result.error || 'Error submitting walk request');
-
-
         onMounted(() => {
-          loadWalks();
           loadDogs();
         });
 
         return {
-          form,
-          walks,
-          dogs,
-          message,
-          error,
-          submitWalkRequest
+          dogs
         };
       }
     }).mount('#app');
